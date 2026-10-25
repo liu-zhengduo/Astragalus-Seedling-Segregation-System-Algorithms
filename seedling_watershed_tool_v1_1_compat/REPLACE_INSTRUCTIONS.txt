@@ -1,0 +1,25 @@
+V1.1 替换与检查说明
+====================
+
+1. 不要把新代码片段手动粘贴进旧文件，容易产生缩进错误。
+2. 把本压缩包完整解压到一个新目录，再在该目录打开 PowerShell。
+3. 先执行：
+
+   python seedling_watershed.py --version
+
+   正确输出应为：Seedling Watershed V1.1.0
+
+4. 单张图片命令：
+
+   python seedling_watershed.py "C:\Users\73546\Desktop\demo1.jpg" -o "C:\Users\73546\Desktop\test"
+
+5. 批量命令（没有 -o）：
+
+   python batch_run.py "C:\Users\73546\Desktop\test-picture" "C:\Users\73546\Desktop\test-picture-results"
+
+6. V1 不使用 HoughLinesP，也没有 lines[:, 0]。如果错误仍指向这两个内容，
+   表示实际运行的不是本包中的 V1.1 文件。请用：
+
+   python -c "import os; print(os.path.abspath('seedling_watershed.py'))"
+
+   检查当前运行文件的完整路径。
